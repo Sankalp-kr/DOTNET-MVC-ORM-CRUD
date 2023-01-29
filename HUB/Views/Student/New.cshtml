@@ -1,0 +1,9 @@
+﻿@if( ViewData["true"] as string == "true" ){
+    <p> Added successfully </p>
+}
+<form action="/student/new" method="post">
+    <input name="Id" placeholder="#id" type="number"/>
+    <input name="Name" placeholder="~name" type="text" />
+    <input name="Class" placeholder="~class" type="text" />
+    <button type="submit"> Add new </button>
+</form>

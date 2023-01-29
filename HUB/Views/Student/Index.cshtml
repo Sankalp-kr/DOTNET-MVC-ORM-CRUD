@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using BOL;
+
+@if(ViewData["true"]=="true"){
+        <p>Removed!</p>
+    }
+<div class="text-center">
+    <a href="/student/new"> Add new Student </a>
+    <h1> List of Students </h1>
+    <table>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+            <th> Class </th>
+            <th> Actions </th>
+        </tr>
+        @foreach(var p in ViewData["slist"] as List<Student>){
+            <tr>
+                <td>
+                    @p.Id
+                </td>
+                <td>
+                    @p.Name
+                </td>
+                <td>
+                    @p.Class
+                </td>
+                <td>
+                    <a href='@Url.Action("Edit","student",new {edthis=@p.Id})'> Edit</a>/
+                    <a href='@Url.Action("Remove","student",new {rmthi=@p.Id})'> Remove</a>                  
+                </td>
+            </tr>
+        }
+    </table>
+</div>

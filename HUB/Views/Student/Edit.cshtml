@@ -1,0 +1,10 @@
+﻿
+@if(ViewData["true"]=="true"){
+    <p>Updated!</p> 
+}
+<form action="/student/Edit/" method="post">
+    <input name="Id" placeholder="#id" type="number" value='@ViewData["id"]' readonly/>
+    <input name="Name" placeholder="~name" type="text" value='@ViewData["name"]' />
+    <input name="Class" placeholder="~class" type="text" value='@ViewData["class"]'/>
+    <button type="submit"> Update </button>
+</form>
